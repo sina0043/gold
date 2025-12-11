@@ -1,0 +1,94 @@
+<app-breadcrumb [items]="BreadcrumbItems"></app-breadcrumb>
+
+<div class="min-h-[45vh] flex flex-col xl:flex-row gap-8">
+  <!-- لیست خرید -->
+  <div class="flex-1">
+    <p-card>
+      <p-dataview [value]="products">
+        <ng-template #list let-items>
+          <div class="flex flex-col">
+            @if (isLoaded) {
+            @for (item of items; track item.id; let last = $last;) {
+            <div>
+              <app-shopping-list-card [item]="item"></app-shopping-list-card>
+              @if(!last) {
+              <div class="border-b border-surface-200 dark:border-surface-700 my-4"></div>
+              }
+            </div>
+            } @empty {
+            <p class="text-surface-500 whitespace-nowrap">محصولی در سبد خرید وجود ندارد</p>
+            }
+            } @else {
+            @for (item of items; track item.id; let last = $last;) {
+            <div>
+              <app-shopping-card-loading></app-shopping-card-loading>
+              @if(!last) {
+              <div class="border-b border-surface-200 dark:border-surface-700 my-4"></div>
+              }
+            </div>
+            } @empty {
+            <p class="text-surface-500 whitespace-nowrap">محصولی در سبد خرید وجود ندارد</p>
+            }
+            }
+          </div>
+        </ng-template>
+      </p-dataview>
+    </p-card>
+  </div>
+
+  <!-- کارت خلاصه سفارش -->
+   @if (isLoaded) {
+    <div class="w-full xl:w-[380px] flex-shrink-0">
+      <div class="sticky top-4">
+        <p-card class="p-4">
+          <!-- قیمت کالاها -->
+          <div class="flex justify-between mb-3">
+            <span class="text-surface-700 dark:text-surface-300">
+              قیمت کالاها ({{ totalItems }})
+            </span>
+            <div class="flex items-baseline">
+              <span class="font-medium text-surface-900 dark:text-surface-0">
+                {{ totalPrice | currency:' ':'symbol':'1.0-0' }}
+              </span>
+              <span class="custom-toman">توم<span class="overlay-n">ن</span>ا</span>
+            </div>
+          </div>
+  
+          <!-- تخفیف شما -->
+          <div class="flex justify-between mb-3">
+            <span class="text-baseGoldColor">
+              تخفیف شما از این خرید
+            </span>
+            <div class="flex items-baseline">
+              <span class="font-medium text-baseGoldColor">
+                {{ discount | currency:' ':'symbol':'1.0-0' }}
+              </span>
+              <span class="custom-toman">توم<span class="overlay-n">ن</span>ا</span>
+            </div>
+          </div>
+  
+          <!-- جمع کل -->
+          <div class="flex justify-between border-t border-surface-200 dark:border-surface-700 pt-3 mt-3">
+            <span class="text-surface-700 dark:text-surface-300">
+              جمع سبد خرید
+            </span>
+            <div class="flex items-baseline">
+              <span class="font-bold text-lg text-surface-900 dark:text-surface-0">
+                {{ finalPrice | currency:' ':'symbol':'1.0-0' }}
+              </span>
+              <span class="custom-toman">توم<span class="overlay-n">ن</span>ا</span>
+            </div>
+          </div>
+  
+          <!-- دکمه -->
+          <button (click)="loginComp.showDialog()" pButton outlined type="button" label="تایید و تکمیل سفارش"
+            class="w-full mt-5" [disabled]="finalPrice === 0"></button>
+        </p-card>
+      </div>
+    </div>
+   }@else{
+    <app-shopping-cart-summary-loading></app-shopping-cart-summary-loading>
+   }
+</div>
+
+<app-login #loginComp></app-login>

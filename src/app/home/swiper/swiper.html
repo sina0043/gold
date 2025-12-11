@@ -1,0 +1,81 @@
+<div class="fashion-slider rounded-[12px] overflow-hidden" pAnimateOnScroll
+    enterClass="animate-enter fade-in-10 slide-in-from-r-8 animate-duration-1000" leaveClass="animate-leave fade-out-0">
+    <div class="swiper swiper-initialized swiper-horizontal swiper-watch-progress swiper-backface-hidden"
+        style="background-color: rgb(159, 160, 81);">
+        <div class="swiper-wrapper">
+            <!-- configure slide color with "data-slide-bg-color" attribute -->
+            <div class="swiper-slide swiper-slide-visible swiper-slide-fully-visible swiper-slide-active cursor-pointer" [routerLink]="'/gold/jewelry/necklaces'"
+                data-slide-bg-color="#9FA051" style="width: 1920px;">
+                <!-- slide title wrap -->
+                <div class="fashion-slider-title" data-swiper-parallax="-130%"
+                    style="transform: translate3d(0%, 0px, 0px);">
+                    <!-- slide title text -->
+                    <div class="fashion-slider-title-text" style="transition: 1000ms; color: rgb(255, 255, 255);">
+                        طلای زینتی</div>
+                </div>
+                <!-- slide image wrap -->
+                <div class="fashion-slider-scale" style="transform: scale(1);">
+                    <!-- slide image -->
+                    <img src="/image/a.jpg" style="transition-duration: 1000ms; transform: scale(1);"
+                        fetchpriority=high alt="item">
+                </div>
+            </div>
+            <!-- configure slide color with "data-slide-bg-color" attribute -->
+            <div class="swiper-slide swiper-slide-next cursor-pointer" data-slide-bg-color="#9B89C5" style="width: 1920px;" [routerLink]="'/gold/melted/2-5g'">
+                <!-- slide title wrap -->
+                <div class="fashion-slider-title" data-swiper-parallax="-130%"
+                    style="transform: translate3d(130%, 0px, 0px);">
+                    <!-- slide title text -->
+                    <div class="fashion-slider-title-text">طلای آب شده</div>
+                </div>
+                <!-- slide image wrap -->
+                <div class="fashion-slider-scale">
+                    <!-- slide image -->
+                    <img src="/image/b.jpg" fetchpriority=high loading="lazy" alt="item">
+                </div>
+            </div>
+            <!-- configure slide color with "data-slide-bg-color" attribute -->
+            <div class="swiper-slide cursor-pointer" data-slide-bg-color="#D7A594" style="width: 1920px;" [routerLink]="'/silver/bars/500g'">
+                <!-- slide title wrap -->
+                <div class="fashion-slider-title" data-swiper-parallax="-130%"
+                    style="transform: translate3d(130%, 0px, 0px);">
+                    <!-- slide title text -->
+                    <div class="fashion-slider-title-text">شمش نقره</div>
+                </div>
+                <!-- slide image wrap -->
+                <div class="fashion-slider-scale">
+                    <!-- slide image -->
+                    <img src="/image/c.jpg" fetchpriority=high loading="lazy" alt="item">
+                </div>
+            </div>
+        </div>
+        <!-- right/next navigation button -->
+        <div class="fashion-slider-button-prev fashion-slider-button fashion-slider-button-disabled">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 350 160 90">
+                <g class="fashion-slider-svg-wrap">
+                    <g class="fashion-slider-svg-circle-wrap">
+                        <circle cx="42" cy="42" r="40"></circle>
+                    </g>
+                    <path class="fashion-slider-svg-arrow"
+                        d="M.983,6.929,4.447,3.464.983,0,0,.983,2.482,3.464,0,5.946Z">
+                    </path>
+                    <path class="fashion-slider-svg-line" d="M80,0H0"></path>
+                </g>
+            </svg>
+        </div>
+        <!-- left/previous navigation button -->
+        <div class="fashion-slider-button-next fashion-slider-button">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 350 160 90">
+                <g class="fashion-slider-svg-wrap">
+                    <g class="fashion-slider-svg-circle-wrap">
+                        <circle cx="42" cy="42" r="40"></circle>
+                    </g>
+                    <path class="fashion-slider-svg-arrow"
+                        d="M.983,6.929,4.447,3.464.983,0,0,.983,2.482,3.464,0,5.946Z">
+                    </path>
+                    <path class="fashion-slider-svg-line" d="M80,0H0"></path>
+                </g>
+            </svg>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,85 @@
+@use "sass:string";
+@use "sass:math";
+// تابع ایجاد چندین box-shadow برای ستاره‌ها
+@function multiple-box-shadow($n) {
+    $value: '#{math.random(2000)}px #{math.random(2000)}px var(--base-gold-color, #FFD700)';
+
+    @for $i from 2 through $n {
+        $value: '#{$value} , #{math.random(2000)}px #{math.random(2000)}px var(--base-gold-color, #FFD700)';
+    }
+
+    @return string.unquote($value);
+}
+
+// ایجاد shadow ها برای سه لایه ستاره
+$shadows-small: multiple-box-shadow(700);
+$shadows-medium: multiple-box-shadow(200);
+$shadows-big: multiple-box-shadow(100);
+
+// لایه‌های ستاره‌ها
+#stars,
+#stars2,
+#stars3 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: transparent;
+    pointer-events: none;
+
+    &:after {
+        content: " ";
+        position: absolute;
+        top: 2000px;
+        background: transparent;
+    }
+}
+
+#stars {
+    width: 1px;
+    height: 1px;
+    box-shadow: $shadows-small;
+    animation: animStar 50s linear infinite;
+
+    &:after {
+        width: 1px;
+        height: 1px;
+        box-shadow: $shadows-small;
+    }
+}
+
+#stars2 {
+    width: 2px;
+    height: 2px;
+    box-shadow: $shadows-medium;
+    animation: animStar 100s linear infinite;
+
+    &:after {
+        width: 2px;
+        height: 2px;
+        box-shadow: $shadows-medium;
+    }
+}
+
+#stars3 {
+    width: 3px;
+    height: 3px;
+    box-shadow: $shadows-big;
+    animation: animStar 150s linear infinite;
+
+    &:after {
+        width: 3px;
+        height: 3px;
+        box-shadow: $shadows-big;
+    }
+}
+
+// انیمیشن حرکت ستاره‌ها
+@keyframes animStar {
+    from {
+        transform: translateY(0px);
+    }
+
+    to {
+        transform: translateY(-2000px);
+    }
+}

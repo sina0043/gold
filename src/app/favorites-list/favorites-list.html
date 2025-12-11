@@ -1,0 +1,27 @@
+<app-breadcrumb [items]="BreadcrumbItems"></app-breadcrumb>
+
+<p-dataview #dv [value]="allProducts" [layout]="layout" [rows]="rowsPerPage" [paginator]="true"
+  [totalRecords]="totalRecords" [first]="currentFirst" (onPage)="onPageChange($event)">
+
+  <ng-template #grid let-items>
+    <div class="grid grid-cols-12 gap-4 pb-6">
+      @if (isLoaded) {
+      @for (product of items; track $index) {
+      <div class="col-span-12 sm:col-span-6 lg:col-span-3">
+        <app-card [product]="product" (addToShoppinglist)="handleAddToShoppingList($event)"
+          (addToWishlist)="handleAddToWishlist($event)">
+        </app-card>
+      </div>
+      }@empty {
+      <p class="text-surface-500 whitespace-nowrap">
+        محصولی در لیست علاقه مندی ها وجود ندارد
+      </p>
+      }
+      } @else {
+      <div *ngFor="let product of items" class="col-span-12 sm:col-span-6 lg:col-span-3">
+        <app-card-loading></app-card-loading>
+      </div>
+      }
+    </div>
+  </ng-template>
+</p-dataview>

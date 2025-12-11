@@ -1,0 +1,64 @@
+<footer class="relative mt-5" pAnimateOnScroll enterClass="animate-enter fade-in-10 slide-in-from-r-8 animate-duration-1000">
+    <div
+        class="flex flex-wrap px-6 lg:px-20 py-8 border-t-[0.25cqmax] border-baseGoldColor">
+        <!-- بخش 1 -->
+        <div pAnimateOnScroll enterClass="animate-enter fade-in-10 slide-in-from-r-8 animate-duration-1000" class="sm:w-1/1 md:w-1/2 xl:w-1/4 px-4 xs:mt-5 lg:mt-0">
+            <img width="50" height="50" src="/image/baazar.svg" class="mb-2">
+            <span pAnimateOnScroll enterClass="animate-enter fade-in-10 slide-in-from-r-8 animate-duration-2000">
+                با بازر می‌توانید به راحتی طلای کم اجرت بخرید و از قیمت‌های لحظه‌ای طلا مطلع شوید.
+            </span>
+            <div class="flex items-center -mb-4 mt-4 cursor-pointer">
+                <a>
+                    <p class="text-lg font-bold text-baseGoldColor mb-5">بیشتر بدانید...</p>
+                </a>
+            </div>
+        </div>
+
+        <!-- بخش 2 -->
+        <div pAnimateOnScroll enterClass="animate-enter fade-in-10 slide-in-from-r-8 animate-duration-1000" class="sm:w-1/1 md:w-1/2 xl:w-1/4 px-4 xs:mt-5 lg:mt-0">
+            <h1>دسته‌بندی‌ها</h1>
+            <div class="flex flex-col gap-2 cursor-pointer">
+                <span pAnimateOnScroll enterClass="animate-enter fade-in-10 slide-in-from-r-8 animate-duration-2000">نمایندگی‌ها</span>
+                <span pAnimateOnScroll enterClass="animate-enter fade-in-10 slide-in-from-r-8 animate-duration-2000">پشتیبانی</span>
+                <span pAnimateOnScroll enterClass="animate-enter fade-in-10 slide-in-from-r-8 animate-duration-2000">حریم خصوصی</span>
+                <span pAnimateOnScroll enterClass="animate-enter fade-in-10 slide-in-from-r-8 animate-duration-2000">قوانین و مقررات</span>
+            </div>
+        </div>
+
+        <!-- بخش 3 -->
+        <div pAnimateOnScroll enterClass="animate-enter fade-in-10 slide-in-from-r-8 animate-duration-1000" class="sm:w-1/1 md:w-1/2 xl:w-1/4 px-4 xs:mt-5 lg:mt-0">
+            <h1>برچسب‌ها</h1>
+            <div class="flex flex-wrap gap-2">
+                <p-button pAnimateOnScroll enterClass="animate-enter fade-in-10 slide-in-from-r-8 animate-duration-2000" label="طلای 18 عیار" [raised]="true" severity="secondary" size="small"></p-button>
+                <p-button pAnimateOnScroll enterClass="animate-enter fade-in-10 slide-in-from-r-8 animate-duration-2000" label="طلای 24 عیار" [raised]="true" severity="secondary" size="small"></p-button>
+                <p-button pAnimateOnScroll enterClass="animate-enter fade-in-10 slide-in-from-r-8 animate-duration-2000" label="سکه" [raised]="true" severity="secondary" size="small"></p-button>
+                <p-button pAnimateOnScroll enterClass="animate-enter fade-in-10 slide-in-from-r-8 animate-duration-2000" label="طلای آب شده" [raised]="true" severity="secondary" size="small"></p-button>
+                <p-button pAnimateOnScroll enterClass="animate-enter fade-in-10 slide-in-from-r-8 animate-duration-2000" label="قیمت روز" [raised]="true" severity="secondary" size="small"></p-button>
+                <p-button pAnimateOnScroll enterClass="animate-enter fade-in-10 slide-in-from-r-8 animate-duration-2000" label="چارت طلا" [raised]="true" severity="secondary" size="small"></p-button>
+            </div>
+        </div>
+
+        <!-- بخش 4 -->
+        <div pAnimateOnScroll enterClass="animate-enter fade-in-10 slide-in-from-r-8 animate-duration-1000" class="sm:w-1/1 md:w-1/2 xl:w-1/4 px-4 xs:mt-5 lg:mt-0">
+            <h1>عضویت در خبرنامه</h1>
+            <p-inputgroup class="mb-4">
+                <p-inputgroup-addon class="cursor-pointer !bg-transparent">
+                    <i class="pi pi-send"></i>
+                </p-inputgroup-addon>
+                <p-floatlabel variant="on">
+                    <input pInputText id="on_label" [(ngModel)]="value3"/>
+                    <label for="on_label">ایمیل</label>
+                </p-floatlabel>
+            </p-inputgroup>
+            <h1 class="mt-5">ما را دنبال کنید</h1>
+            <div class="flex flex-wrap gap-2">
+                <p-button pAnimateOnScroll enterClass="animate-enter fade-in-10 slide-in-from-r-8 animate-duration-2000" icon="pi pi-instagram" [raised]="true" [rounded]="true" severity="secondary"
+                    size="small"></p-button>
+                <p-button pAnimateOnScroll enterClass="animate-enter fade-in-10 slide-in-from-r-8 animate-duration-2000" icon="pi pi-facebook" [raised]="true" [rounded]="true" severity="secondary"
+                    size="small"></p-button>
+                <p-button pAnimateOnScroll enterClass="animate-enter fade-in-10 slide-in-from-r-8 animate-duration-2000" icon="pi pi-twitter" [raised]="true" [rounded]="true" severity="secondary"
+                    size="small"></p-button>
+            </div>
+        </div>
+    </div>
+</footer>

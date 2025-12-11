@@ -1,0 +1,22 @@
+<p-card pAnimateOnScroll class="mt-20" enterClass="animate-enter fade-in-10 slide-in-from-r-8 animate-duration-1000">
+    <div class="card">
+        <h1 class="title flex justify-center items-center gap-5 my-5 textColor before:content-[''] before:block before:h-[2px] before:w-[80px] before:bg-baseGoldColor
+        after:content-[''] after:block after:h-[2px] after:w-[80px] after:bg-baseGoldColor whitespace-nowrap">سوالات متداول</h1>
+        <p-accordion [value]="0">
+            <ng-container *ngFor="let tab of pagedTabs; let i = index; trackBy: tabTrackBy">
+                <p-accordion-panel pAnimateOnScroll enterClass="animate-enter fade-in-10 slide-in-from-r-8 animate-duration-1000" [value]="tab.value" class="!relative !overflow-hidden" [ngClass]="{'!border-0': i === pagedTabs.length - 1}">
+                    <p-accordion-header>{{ tab.title }}</p-accordion-header>
+                    <p-accordion-content>
+                        <p class="m-0">{{ tab.content }}</p>
+                    </p-accordion-content>
+                </p-accordion-panel>
+            </ng-container>
+        </p-accordion>
+    
+        <div class="mt-3">
+            <p-paginator (onPageChange)="onPageChange3($event)" [first]="first3" [rows]="rows3" class="m-auto max-w-fit !bg-transparent"
+                [totalRecords]="totalRecords" [showFirstLastIcon]="false" [showCurrentPageReport]="false">
+            </p-paginator>
+        </div>
+    </div>
+</p-card>

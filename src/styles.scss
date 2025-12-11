@@ -1,0 +1,122 @@
+/* You can add global styles to this file, and also import other style files */
+@use "../src/share/scss/variables.scss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import "primeicons/primeicons.css";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: IRANSansWeb;
+  font-style: normal;
+  font-weight: normal;
+  src: url('/fonts/iransans/woff2/IRANSansXFaNum-Regular.woff2') format('woff2'),
+  url('/fonts/iransans/woff/IRANSansXFaNum-Regular.woff') format('woff'),
+  url('/fonts/iransans/IRANSansXFaNum-Regular.ttf') format('truetype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: IRANSansWebBold;
+  font-style: normal;
+  font-weight: bold;
+  src: url('/fonts/iransans/woff2/IRANSansXFaNum-Bold.woff2') format('woff2'),
+  url('/fonts/iransans/woff/IRANSansXFaNum-Bold.woff') format('woff'),
+  url('/fonts/iransans/IRANSansXFaNum-Bold.ttf') format('truetype');
+  font-display: swap;
+}
+
+body, div, table, label, button, span, a, p, legend, input, h1, h2, h3, h4, h5, h6, mat-label, li, strong, small, label, article, aside, nav, td, th {
+  font-family: IRANSansWeb, serif;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+body {
+  background-color: #f9fafb;
+}
+
+.p-dark body {
+  background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%)
+}
+
+.d-ltr {
+  direction: ltr;
+}
+
+.d-rtl {
+  direction: rtl;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 1rem;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--high-contrast-text-color);
+}
+
+@layer components {
+  .p-dark .p-megamenu {
+    @apply bg-[--bg-glasses];
+  }
+
+  .p-dark .p-megamenu-overlay {
+    @apply bg-[rgba(44,44,52,0.9)];
+  }
+
+  .p-dark .p-card {
+    @apply bg-[--bg-glasses];
+  }
+
+  .p-dark .p-datatable-header {
+    @apply bg-[rgba(44,44,52,0)];
+  }
+
+  .p-dark .p-datatable-thead > tr > th {
+    @apply bg-[--bg-glasses];
+  }
+
+  .p-dark .p-datatable-tbody > tr {
+    @apply bg-[--bg-glasses];
+  }
+  
+  .p-dark .p-accordionpanel > .p-accordionheader {
+    @apply bg-[--bg-glasses];
+  }
+
+  .p-dark .p-accordionpanel > .p-accordioncontent-content {
+    @apply bg-[--bg-glasses];
+  }
+}
+
+input:not(input.p-inputotp-input) {
+  background-color: transparent !important;
+  padding-top: 0.75rem !important;
+  padding-bottom: 0.75rem !important;
+  font-size: 0.875rem !important;
+  line-height: 1.25rem !important;
+}
+
+.custom-toman {
+  font-family: "IRANSans", sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  position: relative;
+  color: color-mix(in srgb, var(--p-surface-300) calc(100% * var(--tw-text-opacity, 1)), transparent);
+  margin-right: 3px;
+}
+
+.overlay-n {
+  position: absolute;
+  top: -9px;
+  left: 3px;
+  font-size: 12px;
+  color: inherit;
+}

@@ -1,0 +1,25 @@
+<p-timeline [value]="events" [align]="alignMode" class="customized-timeline sm:mx-[-16px] mt-16">
+    <ng-template #marker let-event>
+        <span class="flex w-8 h-8 items-center justify-center text-white rounded-full z-10 shadow-sm"
+            [style]="{ 'background-color': event.color }">
+            <i [class]="event.icon"></i>
+        </span>
+    </ng-template>
+    <ng-template #content let-event>
+        <p-card pAnimateOnScroll [enterClass]="'animate-enter ' + event.animation + ' animate-duration-1000'"
+            leaveClass="animate-leave fade-out-0" [header]="event.status" [subheader]="event.date"
+            class="xs:mt-5 sm:mt-0">
+            @if (event.image) {
+            <div>
+                <img [class.ml-auto]="event.directiion == 'left'"
+                    [src]="'https://primefaces.org/cdn/primeng/images/demo/product/' + event.image" [alt]="event.name"
+                    width="200" class="shadow"/>
+            </div>
+            }
+            <p class="my-3">
+                {{event.description}}
+            </p>
+            <p-button label="بیشتر" severity="secondary" />
+        </p-card>
+    </ng-template>
+</p-timeline>

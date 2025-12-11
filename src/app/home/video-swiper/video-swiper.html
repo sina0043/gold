@@ -1,0 +1,55 @@
+<swiper-container #swiperEl class="mySwiper rounded-lg overflow-hidden" space-between="30" slides-per-view="auto"
+    loop="true" free-mode="true" free-mode-momentum="true"
+    autoplay='{"delay":0,"disableOnInteraction":false,"pauseOnMouseEnter":false}' speed="8000" grab-cursor="true">
+
+    <swiper-slide>
+        <div class="slide-text">آموزش خرید طلا</div>
+        <video src="/video/epic.mp4" autoplay loop playsinline muted class="slide-video"
+            (click)="openVideo('/video/epic.mp4')"></video>
+    </swiper-slide>
+
+    <swiper-slide>
+        <div class="slide-text">آموزش انتخاب محصول</div>
+        <video src="/video/ferrari.mp4" autoplay loop playsinline muted class="slide-video"
+            (click)="openVideo('/video/ferrari.mp4')"></video>
+    </swiper-slide>
+
+    <swiper-slide>
+        <div class="slide-text">آموزش افزودن محصول به سبد خرید</div>
+        <video src="/video/homedepot.mp4" autoplay loop playsinline muted class="slide-video"
+            (click)="openVideo('/video/homedepot.mp4')"></video>
+    </swiper-slide>
+
+    <swiper-slide>
+        <div class="slide-text">آموزش ثبت و پیگیری تیکت</div>
+        <video src="/video/lambo.mp4" autoplay loop playsinline muted class="slide-video"
+            (click)="openVideo('/video/lambo.mp4')"></video>
+    </swiper-slide>
+
+    <swiper-slide>
+        <div class="slide-text">آموزش ثبت‌ نام</div>
+        <video src="/video/msi.mp4" autoplay loop playsinline muted class="slide-video"
+            (click)="openVideo('/video/msi.mp4')"></video>
+    </swiper-slide>
+
+    <swiper-slide>
+        <div class="slide-text">آموزش پیگیری سفارش</div>
+        <video src="/video/one-plus.mp4" autoplay loop playsinline muted class="slide-video"
+            (click)="openVideo('/video/one-plus.mp4')"></video>
+    </swiper-slide>
+
+    <swiper-slide>
+        <div class="slide-text">آموزش نحوه دریافت طلای فیزیکی</div>
+        <video src="/video/samsung.mp4" autoplay loop playsinline muted class="slide-video"
+            (click)="openVideo('/video/samsung.mp4')"></video>
+    </swiper-slide>
+
+</swiper-container>
+<p-dialog [(visible)]="showDialog" [modal]="true" [style]="{width: '80vw', maxheight:'80vh'}" (onHide)="closeVideo()" styleClass="videoDialog"
+    [dismissableMask]="true">
+    <ng-template pTemplate="content">
+        @if (currentVideo) {
+        <video [src]="currentVideo" controls autoplay style="width:100%; height:100%;"></video>
+        }
+    </ng-template>
+</p-dialog>

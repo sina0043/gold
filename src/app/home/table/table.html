@@ -1,0 +1,76 @@
+<p-card>
+    <h1 class="title flex justify-center items-center gap-5 my-5 textColor before:content-[''] before:block before:h-[2px] before:w-[80px] before:bg-baseGoldColor
+    after:content-[''] after:block after:h-[2px] after:w-[80px] after:bg-baseGoldColor whitespace-nowrap">پربازدید ترین ها</h1>
+    <p-table
+        #dt
+        [value]="products"
+        [rows]="5"
+        [paginator]="true"
+        [globalFilterFields]="['name', 'category']"
+        [(selection)]="selectedProducts"
+        [rowHover]="true"
+        dataKey="id"
+        class="overflow-x-auto"
+        (sortFunction)="customSort($event)" [customSort]="true"
+    >
+        <ng-template #caption>
+            <div pAnimateOnScroll enterClass="animate-enter fade-in-10 slide-in-from-r-8 animate-duration-1000" class="flex justify-start items-center pb-[18px]">
+                <p-floatlabel variant="on" class="d-rtl xs:m-auto sm:m-0 w-full">
+                    <input class="xs:hidden sm:block sm:w-[40%] xl:w-[20%]" pTooltip="فیلتر بر اساس دسته بندی یا نام محصول" tooltipPosition="left" pInputText (input)="onFilterGlobal($event)" id="on_label"/>
+                    <input class="xs:block sm:hidden w-full" pInputText (input)="onFilterGlobal($event)" id="on_label"/>
+                    <label for="on_label" class="flex justify-center items-center gap-2"> <i class="pi pi-search !text-[14px]"></i> <span class="xs:block sm:hidden">دسته بندی یا نام محصول</span></label>
+                </p-floatlabel>
+            </div>
+        </ng-template>
+        <ng-template #header>
+            <tr pAnimateOnScroll enterClass="animate-enter fade-in-10 slide-in-from-r-8 animate-duration-1000">
+                <th class="whitespace-nowrap">دسته بندی</th>
+                <th class="whitespace-nowrap">نام کالا</th>
+                <th>عکس</th>
+                <th pSortableColumn="price">
+                    <div class="flex items-center gap-2 whitespace-nowrap">
+                        قیمت
+                        <p-sortIcon field="price" />
+                    </div>
+                </th>
+                <th pSortableColumn="fee">
+                    <div class="flex items-center gap-2 whitespace-nowrap">
+                        اجرت
+                        <p-sortIcon field="fee" />
+                    </div>
+                </th>
+                <th pSortableColumn="rating">
+                    <div class="flex items-center gap-2 whitespace-nowrap">
+                        امتیاز کاربران
+                        <p-sortIcon field="rating" />
+                    </div>
+                </th>
+            </tr>
+        </ng-template>
+        <ng-template #body let-product>
+            <tr class="cursor-pointer" (click)="showDialog(product)">
+                <td class="whitespace-nowrap w-1/6">{{ product.category }}</td>
+                <td class="whitespace-nowrap w-1/6">{{ product.name }}</td>
+                <td class="w-1/6">
+                    <img [src]="'/image/gold/' + product.images[0].id" [alt]="product.name" loading="lazy" style="width: 44px" class="rounded"/>
+                </td>
+                <td class="w-1/6">{{ product.price | currency:' ':'symbol':'1.0-0' }}
+                    <span class="custom-toman">
+                        توم<span class="overlay-n">ن</span>ا
+                    </span>
+                </td>
+                <td class="w-1/6">{{ product.fee | currency:' ':'symbol':'1.0-0' }}
+                    <span class="custom-toman">
+                        توم<span class="overlay-n">ن</span>ا
+                    </span>
+                </td>
+                <td class="w-1/6">
+                    <p-rating [(ngModel)]="product.rating" [readonly]="true" />
+                </td>
+            </tr>
+        </ng-template>
+    </p-table>
+</p-card>
+<p-dialog [(visible)]="visible" styleClass="!border-0" [modal]="true" [dismissableMask]="true">
+    <app-card [product]="selectedProduct" (addToShoppinglist)="handleAddToShoppingList($event)" (addToWishlist)="handleAddToWishlist($event)"></app-card>
+</p-dialog>

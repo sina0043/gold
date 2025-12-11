@@ -1,0 +1,186 @@
+:host {
+    position: relative;
+    display: block;
+}
+
+.swiper-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: flex;
+    transition-property: transform;
+    transition-timing-function: var(--swiper-wrapper-transition-timing-function, initial);
+    box-sizing: content-box
+}
+
+.swiper-slide {
+    flex-shrink: 0;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition-property: transform;
+    display: block
+}
+
+.fashion-slider .swiper {
+    height: 40vh;
+    transition: 1s background-color 1.3s
+}
+
+.fashion-slider .swiper-wrapper {
+    transition-delay: 1s;
+    transition-timing-function: cubic-bezier(.5, 0, 0, 1)
+}
+
+.fashion-slider .swiper-slide {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+.fashion-slider-title {
+    transition-delay: 1s;
+    z-index: 10
+}
+
+.fashion-slider-title-text {
+    font-weight: 700;
+    font-size: 80px;
+    line-height: 1.2;
+    letter-spacing: -1px;
+    color: #fff0;
+    -webkit-text-stroke: 2px #fff
+}
+
+.fashion-slider-scale {
+    width: 101%;
+    height: 100%;
+    position: absolute;
+    transform: scale(.6);
+    transition-duration: 1s;
+    transition-property: transform;
+    transition-timing-function: cubic-bezier(.5, 0, 0, 1);
+    opacity: .9;
+    overflow: hidden
+}
+
+.fashion-slider-scale img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1.2) translate(50%);
+    transition-timing-function: cubic-bezier(.5, 0, 0, 1);
+    transition-property: transform
+}
+
+.fashion-slider-button {
+    transition: .5s;
+    outline: none;
+    position: absolute;
+    width: 140px;
+    z-index: 1;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer
+}
+
+.fashion-slider-button svg {
+    display: block;
+    transition: .5s
+}
+
+.fashion-slider-button .fashion-slider-svg-circle-wrap {
+    transition: .5s;
+    transform-origin: -20px 40px;
+    opacity: 1
+}
+
+.fashion-slider-button circle {
+    transition: .5s;
+    stroke-width: 2px;
+    stroke: #fff;
+    fill: none;
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+    opacity: 1;
+    transform-origin: 0px 0px 0px
+}
+
+.fashion-slider-button .fashion-slider-svg-arrow {
+    transition: .5s;
+    fill: #fff;
+    transform: rotateY(180deg) translate(-55px, 36.1px) scale(1.75)
+}
+
+.fashion-slider-button-prev {
+    left: 32px;
+}
+
+.fashion-slider-button-next {
+    right: 32px;
+}
+
+@media (max-width: 640px) {
+    .fashion-slider-button {
+        top: auto;
+        bottom: 16px;
+        transform: none
+    }
+
+    .fashion-slider-button-prev {
+        left: 24px;
+    }
+
+    .fashion-slider-button-next {
+        right: 24px;
+    }
+}
+
+.fashion-slider-button-disabled {
+    opacity: .2;
+    cursor: default
+}
+
+.fashion-slider-button .fashion-slider-svg-wrap {
+    transform: translateY(353px)
+}
+
+.fashion-slider-button-next .fashion-slider-svg-wrap {
+    transform: translateY(353px) rotateY(180deg);
+    transform-origin: 80px 0px 0px
+}
+
+.fashion-slider-button .fashion-slider-svg-line {
+    transition: .5s;
+    stroke: #fff;
+    stroke-width: 2;
+    transform: translate(50px, 42px)
+}
+
+.fashion-slider-button-prev:not(.fashion-slider-button-disabled):hover svg {
+    transform: translate(-16px)
+}
+
+.fashion-slider-button-next:not(.fashion-slider-button-disabled):hover svg {
+    transform: translate(16px)
+}
+
+.fashion-slider-button:not(.fashion-slider-button-disabled):hover .fashion-slider-svg-circle-wrap {
+    transform: scale(1.1)
+}
+
+.fashion-slider-button:not(.fashion-slider-button-disabled):hover circle {
+    stroke-dasharray: 4px;
+    stroke-dashoffset: 4px;
+    opacity: 1
+}
+
+.fashion-slider-button:not(.fashion-slider-button-disabled):hover .fashion-slider-svg-arrow {
+    transform: rotateY(180deg) translate(-40px, 36.1px) scale(1.75)
+}
+
+.fashion-slider-button:not(.fashion-slider-button-disabled):hover .fashion-slider-svg-line {
+    transform: translate(35px, 42px) scaleX(.5)
+}

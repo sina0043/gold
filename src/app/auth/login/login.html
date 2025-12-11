@@ -1,0 +1,68 @@
+<div class="login">
+    <p-dialog [modal]="true" maskStyleClass="backdrop-blur-sm" [(visible)]="visibleDialog"
+        styleClass="!border-0 dark:!bg-bgGlasses">
+        <ng-template #headless>
+            <div pFocusTrap class="flex flex-col px-8 py-8 gap-6 rounded-2xl sm:w-[500px]" style="border-radius: 12px;">
+                <i class="pi pi-times absolute top-[15px] right-[15px] cursor-pointer !text-xs text-surface-500"
+                    (click)="closeDialog()"></i>
+                <img width="53" src="/image/baazar.svg" alt="logo" class="m-auto">
+                @if (isShowLogin) {
+                <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="space-y-8">
+                    <p-iconfield>
+                        <p-inputicon class="pi pi-phone"></p-inputicon>
+                        <input (keypress)="inputUtilsService.allowOnlyNumbers($event)" type="text"
+                            formControlName="phoneNumber" placeholder="شماره موبایل" [pAutoFocus]="true"
+                            class="p-inputtext w-full" maxlength="11"
+                            [ngClass]="{'p-invalid': loginForm.get('phoneNumber')?.invalid && loginForm.get('phoneNumber')?.touched}" />
+                    </p-iconfield>
+                    @if(loginForm.get('phoneNumber')?.errors?.['required'] && loginFormSubmitted) {
+                    <p-message severity="error" size="small" variant="simple" class="!mt-2 block">
+                        لطفا شماره موبایل را وارد کنید
+                    </p-message>
+                    }
+                    @if(loginForm.get('phoneNumber')?.errors?.['pattern'] && loginFormSubmitted) {
+                    <p-message severity="error" size="small" variant="simple" class="!mt-2 block">
+                        شماره موبایل باید با 09 شروع شود
+                    </p-message>
+                    }
+                    @if((loginForm.get('phoneNumber')?.errors?.['minlength'] ||
+                    loginForm.get('phoneNumber')?.errors?.['maxlength']) && loginFormSubmitted) {
+                    <p-message severity="error" size="small" variant="simple" class="!mt-2 block">
+                        شماره موبایل باید 11 رقم باشد
+                    </p-message>
+                    }
+
+                    <p-iconfield>
+                        <p-inputicon class="pi pi-lock"></p-inputicon>
+                        <p-password [toggleMask]="true" placeholder="کلمه عبور" class="w-full" [feedback]="false"
+                            formControlName="password"
+                            [ngClass]="{'p-invalid': loginForm.get('password')?.invalid && loginForm.get('password')?.touched}"></p-password>
+                    </p-iconfield>
+                    @if (loginForm.get('password')?.errors?.['required'] && loginFormSubmitted) {
+                    <p-message severity="error" size="small" variant="simple" class="!mt-2 block">
+                        لطفا کلمه عبور را وارد کنید
+                    </p-message>
+                    }
+                    <div>
+                        <p-button type="submit" label="ورود" outlined class="mt-2" styleClass="w-full"></p-button>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <p-button label="فراموشی رمز عبور" icon="pi pi-lock-open" severity="secondary" class="flex-1"
+                            styleClass="w-full whitespace-nowrap" (click)="resetPasswordClicked()"></p-button>
+                        <p-button label="ثبت نام" icon="pi pi-user" severity="secondary" class="flex-1"
+                            styleClass="w-full" (click)="registerClicked()"></p-button>
+                    </div>
+                </form>
+                }
+                @if(isShowResetPassword) {
+                <app-reset-password [phoneNumber]="resetPhoneNumber"
+                    (passwordChanged)="isShowResetPassword = false;isShowLogin = true"></app-reset-password>
+                }
+                @if(isShowRegister) {
+                <app-register
+                    (registered)="isShowRegister = false; isShowLogin = true; loginForm.reset();"></app-register>
+                }
+            </div>
+        </ng-template>
+    </p-dialog>
+</div>

@@ -1,0 +1,54 @@
+.clock {
+    &-container {
+        background-color: #ffdd0026;
+        border-radius: 5px;
+        display: flex;
+        direction: ltr !important;
+        padding: 8px;
+        width: 200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &-col {
+        text-align: center;
+        margin-right: 10px;
+        margin-left: 10px;
+        position: relative;
+
+        &:not(:last-child):before,
+        &:not(:last-child):after {
+            content: "";
+            background-color: rgba(255, 255, 255, .3);
+            height: 3px;
+            width: 3px;
+            border-radius: 50%;
+            display: block;
+            position: absolute;
+            right: -12px;
+        }
+
+        &:not(:last-child):before {
+            top: 35%;
+        }
+
+        &:not(:last-child):after {
+            top: 50%;
+        }
+    }
+
+    &-timer {
+        &:before {
+            color: #fff;
+            font-size: 20px;
+            text-transform: uppercase;
+        }
+    }
+
+    &-label {
+        color: rgba(255, 255, 255, .35);
+        text-transform: uppercase;
+        font-size: .7rem;
+    }
+}

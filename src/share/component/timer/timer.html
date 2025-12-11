@@ -1,0 +1,11 @@
+@if (!showResend) {
+    <p-button [label]="countDown.toString()" [rounded]="true" [text]="true" [raised]="true" severity="danger" styleClass="!flex !m-auto w-12 h-12"/>
+}
+
+@if (showResend) {
+    <div class="text-center mt-2">
+        <p (click)="onResendClick()" class="text-baseGoldColor cursor-pointer">
+            ارسال مجدد
+        </p>
+    </div>
+}

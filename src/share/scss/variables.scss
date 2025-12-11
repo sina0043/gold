@@ -1,0 +1,10 @@
+:root {
+    --base-gold-color: var(--p-rating-icon-active-color);
+    --text-color: #7f8084;
+}
+
+.p-dark {
+    --base-gold-color: var(--p-rating-icon-active-color);
+    --text-color: #ececec;
+    --bg-glasses: rgba(44,44,52,0.5);
+}

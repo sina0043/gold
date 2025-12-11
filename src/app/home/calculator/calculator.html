@@ -1,0 +1,45 @@
+<div class="calculator" pAnimateOnScroll enterClass="animate-enter fade-in-10 slide-in-from-r-8 animate-duration-1000">
+    <p-card>
+        <h1 class="title flex justify-center items-center gap-5 my-5 textColor before:content-[''] before:block before:h-[2px] before:w-[80px] before:bg-baseGoldColor
+        after:content-[''] after:block after:h-[2px] after:w-[80px] after:bg-baseGoldColor whitespace-nowrap">ماشین
+            حساب خرید طلای آب شده</h1>
+
+        <form [formGroup]="form" class="mt-8 flex justify-center mb-8">
+            <p-inputNumber formControlName="grams" [min]="0" [showButtons]="true" [mode]="'decimal'"
+                placeholder="گرم طلا" class="w-full sm:w-2/6 xl:w-1/6 !p-l-0"></p-inputNumber>
+        </form>
+
+        <!-- جدول نتایج -->
+        <p-table [value]="calcResults" [tableStyle]="{ 'min-width': '100%' }" class="mt-8">
+            <!-- هدر جدول -->
+            <ng-template pTemplate="header">
+                <tr>
+                    <th>عنوان</th>
+                    <th>مقدار 
+                        ( 
+                        <span class="custom-toman !mr-0 ml-1">
+                            توم<span class="overlay-n">ن</span>ا
+                        </span>
+                        )
+                    </th>
+                </tr>
+            </ng-template>
+
+            <!-- بدنه جدول -->
+            <ng-template pTemplate="body" let-row>
+                <tr>
+                    <td>{{ row.label }}</td>
+                    <td>{{ format(row.value) }}</td>
+                </tr>
+            </ng-template>
+
+            <!-- فوتر جدول: جمع کل -->
+            <ng-template pTemplate="footer">
+                <tr class="font-bold text-base-gold">
+                    <td>جمع کل</td>
+                    <td>{{ format(totalPrice) }}</td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </p-card>
+</div>

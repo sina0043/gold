@@ -1,0 +1,63 @@
+<app-breadcrumb [items]="BreadcrumbItems"></app-breadcrumb>
+<div class="contact-us">
+    <p-card>
+        <h1 class="title flex justify-center items-center gap-5 my-5 textColor before:content-[''] before:block before:h-[2px] before:w-[80px] before:bg-baseGoldColor
+        after:content-[''] after:block after:h-[2px] after:w-[80px] after:bg-baseGoldColor whitespace-nowrap">اطلاعات تماس با بازر</h1>
+    
+        <!-- دفتر پشتیبانی -->
+        <h3 class="mb-2">دفتر پشتیبانی و فنی</h3>
+        <p>
+            تهران، طرشت، بلوار شهید جواد اکبری، خیابان شهدای طرشت جنوبی، کارخانه نوآوری بایوتکس
+        </p>
+    
+        <!-- نقشه -->
+        <div class="rounded-xl overflow-hidden my-6 shadow">
+            <div id="map" class="w-full h-[400px]"></div>
+        </div>
+    
+        <!-- کارت‌های پشتیبانی -->
+        <div class="mt-16">
+            <h1 class="title flex justify-center items-center gap-5 my-8 textColor before:content-[''] before:block before:h-[2px] before:w-[80px] before:bg-baseGoldColor
+            after:content-[''] after:block after:h-[2px] after:w-[80px] after:bg-baseGoldColor whitespace-nowrap">پشتیبانی آنلاین و تلفنی بازر</h1>
+    
+            <div class="flex flex-wrap gap-6 justify-center">
+    
+                <!-- ایمیل -->
+                <div class="shadow p-6 rounded-2xl flex-1 min-w-[250px] text-center dark:!bg-bgGlasses">
+                    <i class="pi pi-envelope text-baseGoldColor !text-[20px] mb-3"></i>
+                    <h3 class="mb-2">ایمیل پشتیبانی کاربران بازر</h3>
+                    <a class="hover:underline" href="mailto:info@baazar.ir">info@baazar.ir</a>
+                </div>
+    
+                <!-- تلفن -->
+                <div class="shadow p-6 rounded-2xl flex-1 min-w-[250px] text-center dark:!bg-bgGlasses">
+                    <i class="pi pi-phone text-baseGoldColor !text-[20px] mb-3"></i>
+                    <h3 class="mb-2">شماره تلفن های پشتیبانی</h3>
+                    <div class="flex flex-col gap-2">
+                        <a class="hover:underline" href="tel:+982165013024">02165013024</a>
+                        <a class="hover:underline" href="tel:+982165013095">02165013095</a>
+                        <a class="hover:underline" href="tel:+989105698040">09105698040</a>
+                    </div>
+                </div>
+    
+                <!-- روزهای کاری -->
+                <div class="shadow p-6 rounded-2xl flex-1 min-w-[250px] text-center dark:!bg-bgGlasses">
+                    <i class="pi pi-calendar text-baseGoldColor !text-[20px] mb-3"></i>
+                    <h3 class="mb-2">روزهای کاری پشتیبانی بازر</h3>
+                    <p>شنبه تا پنجشنبه</p>
+                </div>
+    
+                <!-- ساعات کاری -->
+                <div class="shadow p-6 rounded-2xl flex-1 min-w-[250px] text-center dark:!bg-bgGlasses">
+                    <i class="pi pi-clock text-baseGoldColor !text-[20px] mb-3"></i>
+                    <h3 class="mb-2">ساعات کاری پشتیبانی تلفنی</h3>
+                    <div class="flex flex-col gap-2">
+                        <p>شنبه تا چهارشنبه 9 الی 18</p>
+                        <p>پنجشنبه 9 الی 14</p>
+                    </div>
+                </div>
+    
+            </div>
+        </div>
+    </p-card>
+</div>
