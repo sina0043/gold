@@ -1,0 +1,1 @@
+import{e as i,f as a}from"./chunk-MGRJPO3X.js";import{S as o,X as t,ua as e}from"./chunk-JON7ULIB.js";var f=class r{platformId=t(e);isBrowser(){return i(this.platformId)}isServer(){return a(this.platformId)}static \u0275fac=function(n){return new(n||r)};static \u0275prov=o({token:r,factory:r.\u0275fac,providedIn:"root"})};export{f as a};

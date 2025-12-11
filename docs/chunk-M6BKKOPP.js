@@ -1,0 +1,1 @@
+import{S as i,m as o,n as t}from"./chunk-JON7ULIB.js";var n=class e{changeThemeColor$=new o;shoppingListChanged$=new t(void 0);wishlistChanged$=new o;static \u0275fac=function(r){return new(r||e)};static \u0275prov=i({token:e,factory:e.\u0275fac,providedIn:"root"})};export{n as a};
