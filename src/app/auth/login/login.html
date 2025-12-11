@@ -5,7 +5,7 @@
             <div pFocusTrap class="flex flex-col px-8 py-8 gap-6 rounded-2xl sm:w-[500px]" style="border-radius: 12px;">
                 <i class="pi pi-times absolute top-[15px] right-[15px] cursor-pointer !text-xs text-surface-500"
                     (click)="closeDialog()"></i>
-                <img width="53" src="/image/baazar.svg" alt="logo" class="m-auto">
+                <img width="53" src="assets/image/baazar.svg" alt="logo" class="m-auto">
                 @if (isShowLogin) {
                 <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="space-y-8">
                     <p-iconfield>

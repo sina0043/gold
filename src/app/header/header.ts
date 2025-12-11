@@ -286,8 +286,8 @@ export class Header implements OnInit, AfterViewInit, OnDestroy {
 
         // اگر می‌خوای در particles.js استفاده شود:
         const file = this.deviceService.isMobile()
-            ? '/library/particlesInMobile.json'
-            : '/library/particles.json';
+            ? 'assets/library/particlesInMobile.json'
+            : 'assets/library/particles.json';
 
         fetch(file)
             .then(res => res.json())

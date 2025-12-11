@@ -52,7 +52,7 @@
                 <td class="whitespace-nowrap w-1/6">{{ product.category }}</td>
                 <td class="whitespace-nowrap w-1/6">{{ product.name }}</td>
                 <td class="w-1/6">
-                    <img [src]="'/image/gold/' + product.images[0].id" [alt]="product.name" loading="lazy" style="width: 44px" class="rounded"/>
+                    <img [src]="'assets/image/gold/' + product.images[0].id" [alt]="product.name" loading="lazy" style="width: 44px" class="rounded"/>
                 </td>
                 <td class="w-1/6">{{ product.price | currency:' ':'symbol':'1.0-0' }}
                     <span class="custom-toman">

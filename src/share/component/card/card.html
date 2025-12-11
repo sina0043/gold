@@ -5,10 +5,10 @@
             <p-galleria [value]="product?.images" [containerStyle]="{ 'max-width': '640px' }" [numVisible]="3"
                 [activeIndex]="product?.activeIndex">
                 <ng-template #item let-image>
-                    <img class="w-full h-[200px]" [src]="'/image/gold/' + image.id" [alt]="image.id" />
+                    <img class="w-full h-[200px]" [src]="'assets/image/gold/' + image.id" [alt]="image.id" />
                 </ng-template>
                 <ng-template #thumbnail let-image>
-                    <img [src]="'/image/gold/' + image.id" class="max-h-[50px]" [alt]="image.id" />
+                    <img [src]="'assets/image/gold/' + image.id" class="max-h-[50px]" [alt]="image.id" />
                 </ng-template>
             </p-galleria>
             @if (product?.inventoryStatus === 'OUTOFSTOCK') {
