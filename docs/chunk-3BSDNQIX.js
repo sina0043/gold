@@ -1,1 +1,0 @@
-import{S as i}from"./chunk-JON7ULIB.js";var e=class t{get width(){return window.innerWidth}isMobile(){return this.width<=576}isTablet(){return this.width>576&&this.width<=1200}isDesktop(){return this.width>1200}static \u0275fac=function(r){return new(r||t)};static \u0275prov=i({token:t,factory:t.\u0275fac,providedIn:"root"})};export{e as a};
